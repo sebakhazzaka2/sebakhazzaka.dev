@@ -1,28 +1,71 @@
-# Portfolio — sebakhazzaka.dev
+# AGENTS.md
 
-## Stack
-Next.js 16 · App Router · TypeScript strict · Tailwind CSS 4 · shadcn/ui · Framer Motion
+## Contexto de trabajo
 
-## Convenciones
-- Conventional Commits en inglés
-- Squash merge en PRs
-- Componentes en src/components/, páginas en src/app/
-- Sin inline styles — todo Tailwind utilities
-- Sin `any` en TypeScript
-- `prefers-reduced-motion` en todas las animaciones
+Este repositorio contiene un portfolio profesional.
 
-## Estructura de rutas
-/ → landing
-/proyectos/consultorio → case study
-/proyectos/frontpet → case study
-/sobre-mi → bio
-/cv → descarga de CVs
+Antes de realizar cambios, revisar:
 
-## Fuente de verdad del diseño
-Stitch — extraer tokens antes de implementar cada componente
+- `CLAUDE.md` → contexto técnico y reglas específicas del proyecto.
+- `projects.md` → objetivo, usuarios, tecnologías y alcance.
+- `/docs` → documentación adicional y decisiones del proyecto.
+- Referencias visuales de Stitch → fuente principal para la implementación de UI.
 
-## No hacer
-- Sin `useMemo`/`useCallback` manuales (React Compiler activo)
-- Sin localStorage
-- Sin pages router
-- Sin CSS modules (usar Tailwind)
+---
+
+## Forma de trabajo
+
+Antes de implementar cambios importantes:
+
+1. Analizar el contexto existente.
+2. Revisar documentación relacionada.
+3. Proponer un plan cuando la tarea tenga múltiples pasos.
+4. Implementar de forma incremental.
+5. Verificar el resultado antes de finalizar.
+
+---
+
+## Desarrollo
+
+Priorizar:
+
+- Código simple y mantenible.
+- Componentes reutilizables cuando aporten valor.
+- Buenas prácticas de React y Next.js.
+- Performance y experiencia de usuario.
+- Diseño responsive.
+- Accesibilidad.
+
+Evitar:
+
+- Sobreingeniería.
+- Dependencias innecesarias.
+- Abstracciones prematuras.
+- Duplicación de lógica.
+- Soluciones difíciles de mantener.
+
+---
+
+## UI y diseño
+
+Las referencias visuales generadas en Stitch son la fuente de verdad para la interfaz.
+
+Al implementar:
+
+- Mantener estructura, jerarquía y estilo visual.
+- Respetar tipografías, espaciados y composición.
+- Adaptar correctamente a móvil.
+- Crear componentes consistentes.
+- No modificar decisiones visuales importantes sin analizar el impacto.
+
+---
+
+## Calidad
+
+Antes de terminar una tarea:
+
+- Verificar que el proyecto compile.
+- Revisar errores de consola.
+- Confirmar comportamiento responsive.
+- Eliminar código muerto.
+- Mantener consistencia con el código existente.
