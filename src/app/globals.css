@@ -1,26 +1,116 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  Tokens portados de docs/stitch/*.html (Stitch project 15026464097317010006).
+  Solo los ~15 colores realmente usados en las pantallas, no los ~50 de la paleta
+  Material-3 completa que Stitch exporta. Sitio dark-only: sin variante .dark.
+*/
+@theme {
+  /* Semántica shadcn (Button, Badge) mapeada a los tokens de Stitch */
+  --color-background: #131313;
+  --color-foreground: #ededed;
+  --color-card: #0e0e0e;
+  --color-card-foreground: #ededed;
+  --color-popover: #0e0e0e;
+  --color-popover-foreground: #ededed;
+  --color-primary: #3b82f6;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #20201f;
+  --color-secondary-foreground: #ededed;
+  --color-muted: #20201f;
+  /* #666666 original de Stitch da ~3.6:1 sobre #131313, falla WCAG AA. Subido a 8A8A8A (~4.5:1). */
+  --color-muted-foreground: #8a8a8a;
+  --color-accent: #2a2a2a;
+  --color-accent-foreground: #ededed;
+  --color-destructive: #ffb4ab;
+  --color-destructive-foreground: #690005;
+  --color-border: #333333;
+  --color-input: #333333;
+  --color-ring: #3b82f6;
+
+  /* Tokens literales de Stitch, para markup fiel al diseño original */
+  --color-status-blue: #3b82f6;
+  --color-border-slate: #333333;
+  --color-text-primary: #ededed;
+  --color-text-secondary: #a1a1a1;
+  --color-text-muted: #8a8a8a;
+  --color-surface-container: #20201f;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353535;
+  --color-error: #ffb4ab;
+
+  /* Radios — Stitch: DEFAULT 2px, lg 4px, xl 8px, "full" 12px (no es 9999px) */
+  --radius: 2px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --radius-xl: 8px;
+  --radius-2xl: 12px;
+  --radius-3xl: 12px;
+  --radius-4xl: 12px;
+
+  /* Espaciado con nombre, igual a las clases que usa el propio HTML de Stitch */
+  --spacing-section-gap: 120px;
+  --spacing-margin-desktop: 64px;
+  --spacing-margin-mobile: 16px;
+  --spacing-gutter: 24px;
+
+  /* Tipografía: Geist (texto) + JetBrains Mono (labels/código) */
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-jetbrains-mono);
+
+  --font-headline-lg: var(--font-geist);
+  --text-headline-lg: 48px;
+  --text-headline-lg--line-height: 1.1;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 700;
+
+  --font-headline-lg-mobile: var(--font-geist);
+  --text-headline-lg-mobile: 32px;
+  --text-headline-lg-mobile--line-height: 1.2;
+  --text-headline-lg-mobile--font-weight: 700;
+
+  --font-headline-md: var(--font-geist);
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 1.3;
+  --text-headline-md--font-weight: 600;
+
+  --font-body-lg: var(--font-geist);
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--font-weight: 400;
+
+  --font-body-md: var(--font-geist);
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 400;
+
+  --font-caption: var(--font-geist);
+  --text-caption: 12px;
+  --text-caption--line-height: 1.4;
+  --text-caption--font-weight: 500;
+
+  --font-mono-label: var(--font-jetbrains-mono);
+  --text-mono-label: 14px;
+  --text-mono-label--line-height: 1.4;
+  --text-mono-label--letter-spacing: 0.02em;
+  --text-mono-label--font-weight: 500;
+
+  --font-mono-code: var(--font-jetbrains-mono);
+  --text-mono-code: 13px;
+  --text-mono-code--line-height: 1.7;
+  --text-mono-code--font-weight: 400;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
 }
