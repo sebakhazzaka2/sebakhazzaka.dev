@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Senior Software Engineer | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-dim": "#131313",
+                        "text-muted": "#666666",
+                        "secondary-container": "#4a4949",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#313030",
+                        "error-container": "#93000a",
+                        "on-background": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "border-slate": "#333333",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-container": "#655efb",
+                        "on-primary": "#303030",
+                        "primary-container": "#000000",
+                        "outline-variant": "#4c4546",
+                        "on-primary-container": "#757575",
+                        "on-primary-fixed": "#1b1b1b",
+                        "text-secondary": "#A1A1A1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-bright": "#393939",
+                        "tertiary-fixed": "#e2dfff",
+                        "surface-variant": "#353535",
+                        "on-secondary-container": "#bab8b7",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c3c0ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "text-primary": "#EDEDED",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "background": "#131313",
+                        "secondary": "#c8c6c5",
+                        "on-tertiary": "#1d00a5",
+                        "primary": "#c6c6c6",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container": "#20201f",
+                        "surface-tint": "#c6c6c6",
+                        "tertiary-container": "#000000",
+                        "surface": "#131313",
+                        "surface-container-highest": "#353535",
+                        "tertiary": "#c3c0ff",
+                        "on-surface-variant": "#cfc4c5",
+                        "on-tertiary-fixed": "#0f0069",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#3323cc",
+                        "on-secondary-fixed-variant": "#474646",
+                        "outline": "#988e90",
+                        "inverse-primary": "#5e5e5e",
+                        "status-blue": "#3B82F6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-label": ["JetBrains Mono"],
+                        "body-md": ["Geist"],
+                        "mono-code": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "mono-label": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mono-code": ["13px", { "lineHeight": "1.7", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #EDEDED;
+            font-family: 'Geist', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary min-h-screen flex flex-col pt-16">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border-slate flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop z-50 transition-all duration-200 ease-in-out">
+<div class="flex items-center gap-2 text-primary font-mono-label text-mono-label uppercase tracking-widest text-body-lg font-bold text-text-primary">
+<span class="material-symbols-outlined" data-icon="terminal" style="font-variation-settings: 'FILL' 0;">terminal</span>
+<span>ENGINEER_CORE</span>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap">
+<!-- Hero Section -->
+<section class="mt-32 md:mt-48 mb-section-gap">
+<div class="max-w-3xl">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-text-primary mb-6">
+                    Senior Software Engineer.
+                </h1>
+<p class="font-body-lg text-body-lg text-text-secondary leading-relaxed">
+                    Building scalable systems with a focus on architecture, reliability, and code quality. 
+                    I engineer solutions that withstand complexity.
+                </p>
+<div class="mt-12 flex gap-4">
+<button class="bg-status-blue text-white px-6 py-3 font-mono-label text-mono-label hover:opacity-90 transition-opacity">
+                        VIEW_WORK
+                    </button>
+<button class="bg-[#1A1A1A] border border-border-slate text-text-primary px-6 py-3 font-mono-label text-mono-label hover:border-[#444444] transition-colors">
+                        CONTACT
+                    </button>
+</div>
+</div>
+</section>
+<!-- How I Work -->
+<section class="mb-12 bg-[#1A1A1A] border border-border-slate p-6 md:p-8 flex flex-col md:flex-row items-center gap-8">
+<div class="w-full md:w-1/2 aspect-video bg-[#111111] border border-border-slate rounded-lg flex items-center justify-center text-text-muted font-mono-code text-mono-code">
+    screenshot sistema live
+  </div>
+<div class="flex-grow space-y-4">
+<div class="flex items-center gap-2">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+</span>
+<span class="font-mono-label text-mono-label text-text-primary tracking-widest">LIVE</span>
+</div>
+<div class="space-y-1">
+<p class="font-body-md text-body-md text-text-primary">Sistema en producción desde mayo 2026. Cliente activo pagando.</p>
+<p class="font-body-md text-body-md text-text-secondary">Segundo SaaS con propuesta comercial firmada.</p>
+</div>
+<button class="bg-status-blue text-white px-6 py-2 font-mono-label text-mono-label hover:opacity-90 transition-opacity flex items-center gap-2">
+      Ver sistema <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</section><section class="mb-section-gap">
+<h2 class="font-headline-md text-headline-md text-text-primary mb-12 border-b border-border-slate pb-4">
+                [HOW_I_WORK]
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-border-slate"><div class="bg-[#111111] p-8 hover:bg-[#151515] transition-colors flex flex-col min-h-[320px]">
+<span class="material-symbols-outlined text-text-secondary mb-4" data-icon="science">science</span>
+<h3 class="font-mono-label text-mono-label text-text-primary mb-2">01. TESTING_FIRST</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-6 flex-grow">
+    TDD and comprehensive integration testing. Coverage is not just a metric; it's a guarantee of system stability during rapid iteration.
+  </p>
+<div class="bg-[#0e0e0e] border-l-[3px] border-status-blue p-3 font-mono-code text-[12px] italic text-text-muted">
+    Evidence: Coverage &gt; 95% on core modules.
+  </div>
+</div>
+<div class="bg-[#111111] p-8 hover:bg-[#151515] transition-colors flex flex-col min-h-[320px]">
+<span class="material-symbols-outlined text-text-secondary mb-4" data-icon="architecture">architecture</span>
+<h3 class="font-mono-label text-mono-label text-text-primary mb-2">02. CLEAN_ARCHITECTURE</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-6 flex-grow">
+    Separation of concerns, decoupled domains, and SOLID principles. Building structures that adapt to changing business requirements without rewriting core logic.
+  </p>
+<div class="bg-[#0e0e0e] border-l-[3px] border-status-blue p-3 font-mono-code text-[12px] italic text-text-muted">
+    Evidence: Zero circular dependencies in dependency graph.
+  </div>
+</div>
+<div class="bg-[#111111] p-8 hover:bg-[#151515] transition-colors flex flex-col min-h-[320px]">
+<span class="material-symbols-outlined text-text-secondary mb-4" data-icon="rocket_launch">rocket_launch</span>
+<h3 class="font-mono-label text-mono-label text-text-primary mb-2">03. AUTOMATION_CI_CD</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-6 flex-grow">
+    Frictionless deployments. Automated pipelines enforcing linting, security scans, and zero-downtime releases.
+  </p>
+<div class="bg-[#0e0e0e] border-l-[3px] border-status-blue p-3 font-mono-code text-[12px] italic text-text-muted">
+    Evidence: Deployment frequency &lt; 15 mins from merge.
+  </div>
+</div>
+<div class="bg-[#111111] p-8 hover:bg-[#151515] transition-colors flex flex-col min-h-[320px]">
+<span class="material-symbols-outlined text-text-secondary mb-4" data-icon="menu_book">menu_book</span>
+<h3 class="font-mono-label text-mono-label text-text-primary mb-2">04. DOCUMENTATION</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-6 flex-grow">
+    Clear, living documentation. Architecture Decision Records (ADRs) and self-documenting code ensure team alignment and smooth onboarding.
+  </p>
+<div class="bg-[#0e0e0e] border-l-[3px] border-status-blue p-3 font-mono-code text-[12px] italic text-text-muted">
+    Evidence: 100% ADR coverage for architectural shifts.
+  </div>
+</div></div>
+</section>
+<!-- Selected Projects -->
+<section class="mb-section-gap">
+<h2 class="font-headline-md text-headline-md text-text-primary mb-12 border-b border-border-slate pb-4">
+                [SELECTED_PROJECTS]
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- FrontPet -->
+<div class="border border-border-slate bg-[#111111] flex flex-col h-full hover:border-[#444444] transition-colors">
+<div class="w-full h-48 bg-cover bg-center border-b border-border-slate" data-alt="A highly technical, dark-mode abstract visualization of data pipelines representing a complex veterinary clinic management system. Minimalist aesthetic with subtle neon blue highlights on a pure black background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpuUxMWxwzv3dvNM4zftoaCt-FTP4rH4j3xRIX4hX3UWGnqf1kS8aMN6OF8FnEYEej7p42kw-U3tXowqpONjU7GiCP5OYUv3Q9jMnf8BQRtABgMYk8lE94zAXVt3IygVNbeZeArkX6BmolwkFiELEfW6hmce6wSAu9UG7IvMggeblo9gQy6VGEl8XxNJ9WFmP4oVJyYRnidTx-ztKFg0ay6VFkr6yqZJPGbekBMAyAJf2GJkCcdBtr1A')"></div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-text-primary mb-2">FrontPet System</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-6 flex-grow">
+                            Challenge: Architecting a multi-tenant SaaS platform for veterinary clinics capable of handling concurrent real-time scheduling conflicts and medical record synchronization.
+                        </p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="bg-[#1A1A1A] text-text-muted px-2 py-1 font-mono-code text-mono-code">Node.js</span>
+<span class="bg-[#1A1A1A] text-text-muted px-2 py-1 font-mono-code text-mono-code">PostgreSQL</span>
+<span class="bg-[#1A1A1A] text-text-muted px-2 py-1 font-mono-code text-mono-code">React</span>
+<span class="bg-[#1A1A1A] text-text-muted px-2 py-1 font-mono-code text-mono-code">Docker</span>
+</div><div class="mt-8 flex items-center gap-6">
+<button class="bg-status-blue text-white px-4 py-2 font-mono-label text-mono-label hover:opacity-90 transition-opacity flex items-center gap-2">
+    Ver case study <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<a class="font-mono-code text-mono-code text-text-muted hover:text-primary transition-colors underline decoration-status-blue/30" href="#">Ver en GitHub →</a>
+</div>
+</div>
+</div>
+<!-- Consultorio -->
+<div class="border border-border-slate bg-[#111111] flex flex-col h-full hover:border-[#444444] transition-colors">
+<div class="w-full h-48 bg-cover bg-center border-b border-border-slate" data-alt="A dark, minimalist architectural wireframe of a medical scheduling application interface. Clean lines, monochromatic palette with surgical precision aesthetic. Focus on structural integrity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuY0RSlmzZwhLLbFO-bF_LIhXB3fRSJdHdWTFjjDz5Jcpw7sFdU0iakjSvAokEWxAbTiJzspLYKxPWMzEnl1hFbHNji6zXogQ1Hpw-gMif16TLJTG1jFtqAZOrliGv74L8P-3GmMcNmJVY0-1qlf_G-CXlzmctLIgh5NxPAPyQHr8lxCFnr4ZqDGvLGF9g5St2j6noeQaEAsaF7hhocNoAPNT5Ba9Tehc_ypHZtZaL18GZSHmMdSg3Iw')"></div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-text-primary mb-2">Consultorio API</h3>
+<p class="font-body-md text-body-md text-text-secondary mb-6 flex-grow">
+                            Challenge: Designing a high-throughput, compliant API layer to aggregate patient data across distributed legacy healthcare systems with sub-100ms latency requirements.
+                        </p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="bg-[#1A1A1A] text-text-muted px-2 py-1 font-mono-code text-mono-code">Go</span>
+<span class="bg-[#1A1A1A] text-text-muted px-2 py-1 font-mono-code text-mono-code">gRPC</span>
+<span class="bg-[#1A1A1A] text-text-muted px-2 py-1 font-mono-code text-mono-code">Redis</span>
+<span class="bg-[#1A1A1A] text-text-muted px-2 py-1 font-mono-code text-mono-code">AWS</span>
+</div><div class="mt-8 flex items-center gap-6">
+<button class="bg-status-blue text-white px-4 py-2 font-mono-label text-mono-label hover:opacity-90 transition-opacity flex items-center gap-2">
+    Ver case study <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<a class="font-mono-code text-mono-code text-text-muted hover:text-primary transition-colors underline decoration-status-blue/30" href="#">Ver en GitHub →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Stack -->
+<section>
+<h2 class="font-headline-md text-headline-md text-text-primary mb-12 border-b border-border-slate pb-4">
+                [CORE_STACK]
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<h3 class="font-mono-label text-mono-label text-text-primary mb-4 border-b border-border-slate pb-2 inline-block">BACKEND</h3>
+<ul class="space-y-3 font-mono-code text-mono-code text-text-secondary">
+<li>- Go / Rust</li>
+<li>- Node.js (TypeScript)</li>
+<li>- Python (FastAPI)</li>
+<li>- PostgreSQL / Redis</li>
+</ul>
+</div>
+<div>
+<h3 class="font-mono-label text-mono-label text-text-primary mb-4 border-b border-border-slate pb-2 inline-block">INFRASTRUCTURE</h3>
+<ul class="space-y-3 font-mono-code text-mono-code text-text-secondary">
+<li>- AWS / GCP</li>
+<li>- Kubernetes / Docker</li>
+<li>- Terraform</li>
+<li>- CI/CD (GitHub Actions)</li>
+</ul>
+</div>
+<div>
+<h3 class="font-mono-label text-mono-label text-text-primary mb-4 border-b border-border-slate pb-2 inline-block">FRONTEND</h3>
+<ul class="space-y-3 font-mono-code text-mono-code text-text-secondary">
+<li>- React / Next.js</li>
+<li>- TypeScript</li>
+<li>- Tailwind CSS</li>
+<li>- WebGL / Three.js</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-background border-t border-border-slate grid grid-cols-1 md:grid-cols-2 gap-gutter py-12 px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto mt-auto">
+<div class="font-mono-code text-mono-code text-primary opacity-80">
+            © 2024 SYSTEM_ARCHITECT // ALL RIGHTS RESERVED
+        </div>
+<div class="flex flex-wrap gap-6 md:justify-end font-mono-code text-mono-code text-text-muted">
+<a class="hover:text-primary underline decoration-status-blue/50 transition-opacity opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="hover:text-primary underline decoration-status-blue/50 transition-opacity opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="hover:text-primary underline decoration-status-blue/50 transition-opacity opacity-80 hover:opacity-100" href="#">Email</a>
+<span class="text-status-blue opacity-80">Status: Available for high-impact roles</span>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sobre Mí | ENGINEER_CORE</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-dim": "#131313",
+                        "text-muted": "#666666",
+                        "secondary-container": "#4a4949",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#313030",
+                        "error-container": "#93000a",
+                        "on-background": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "border-slate": "#333333",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-container": "#655efb",
+                        "on-primary": "#303030",
+                        "primary-container": "#000000",
+                        "outline-variant": "#4c4546",
+                        "on-primary-container": "#757575",
+                        "on-primary-fixed": "#1b1b1b",
+                        "text-secondary": "#A1A1A1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-bright": "#393939",
+                        "tertiary-fixed": "#e2dfff",
+                        "surface-variant": "#353535",
+                        "on-secondary-container": "#bab8b7",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c3c0ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "text-primary": "#EDEDED",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "background": "#131313",
+                        "secondary": "#c8c6c5",
+                        "on-tertiary": "#1d00a5",
+                        "primary": "#c6c6c6",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container": "#20201f",
+                        "surface-tint": "#c6c6c6",
+                        "tertiary-container": "#000000",
+                        "surface": "#131313",
+                        "surface-container-highest": "#353535",
+                        "tertiary": "#c3c0ff",
+                        "on-surface-variant": "#cfc4c5",
+                        "on-tertiary-fixed": "#0f0069",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#3323cc",
+                        "on-secondary-fixed-variant": "#474646",
+                        "outline": "#988e90",
+                        "inverse-primary": "#5e5e5e",
+                        "status-blue": "#3B82F6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "caption": ["Geist"],
+                        "mono-label": ["JetBrains Mono"],
+                        "body-md": ["Geist"],
+                        "mono-code": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "mono-label": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mono-code": ["13px", { "lineHeight": "1.7", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased font-body-lg min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background/80 backdrop-blur-md fixed top-0 w-full border-b border-border-slate transition-all duration-200 ease-in-out z-50">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary font-mono-label">terminal</span>
+<span class="text-body-lg font-mono-label font-bold text-text-primary uppercase tracking-widest">ENGINEER_CORE</span>
+</div>
+<!-- Web Nav -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-text-secondary hover:text-text-primary transition-colors hover:bg-surface-container-highest/50 px-3 py-2 font-mono-label text-mono-label uppercase tracking-widest" href="#">Work</a>
+<a class="text-primary border-b border-primary hover:bg-surface-container-highest/50 px-3 py-2 font-mono-label text-mono-label uppercase tracking-widest" href="#">Sobre mí</a>
+<a class="text-text-secondary hover:text-text-primary transition-colors hover:bg-surface-container-highest/50 px-3 py-2 font-mono-label text-mono-label uppercase tracking-widest" href="#">Contact</a>
+</nav>
+<!-- Mobile Menu Trigger (Dummy) -->
+<button class="md:hidden text-text-secondary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-[800px] mx-auto w-full flex flex-col items-center text-center space-y-16">
+<!-- 1. Profile Picture -->
+<div class="flex flex-col items-center gap-6">
+<div class="w-[120px] h-[120px] md:w-[140px] md:h-[140px] rounded-full bg-surface-container-highest border border-border-slate flex-shrink-0"></div>
+<h1 class="font-headline-md text-headline-md text-text-primary">
+            John Doe <span class="text-text-secondary font-normal mx-2">|</span> Desarrollador Full-Stack
+        </h1>
+</div>
+<!-- 2. Introduction -->
+<p class="font-body-lg text-body-lg text-text-primary max-w-2xl">
+        Desarrollador Full-Stack especializado en backend Java con productos en producción.
+    </p>
+<!-- 3. Lo que construí -->
+<div class="w-full text-left space-y-6 max-w-2xl">
+<h2 class="font-mono-label text-mono-label text-text-secondary uppercase tracking-widest mb-4 border-b border-border-slate pb-2">Lo que construí</h2>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 py-2">
+<div>
+<h3 class="font-body-lg text-text-primary font-medium">Plataforma E-Commerce Central</h3>
+<p class="font-body-md text-text-secondary">Sistema de procesamiento de pagos y gestión de inventario distribuido.</p>
+</div>
+<span class="inline-block px-2 py-1 text-xs font-mono-label bg-status-blue/10 text-status-blue border border-status-blue/20 rounded-DEFAULT w-fit md:flex-shrink-0">Live</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 py-2">
+<div>
+<h3 class="font-body-lg text-text-primary font-medium">API de Logística</h3>
+<p class="font-body-md text-text-secondary">Servicio de enrutamiento y tracking en tiempo real basado en microservicios.</p>
+</div>
+<span class="inline-block px-2 py-1 text-xs font-mono-label bg-surface-container-highest border border-border-slate text-text-secondary rounded-DEFAULT w-fit md:flex-shrink-0">En desarrollo</span>
+</div>
+</div>
+<!-- 4. Cómo trabajo -->
+<div class="w-full text-left max-w-2xl">
+<h2 class="font-mono-label text-mono-label text-text-secondary uppercase tracking-widest mb-4 border-b border-border-slate pb-2">Cómo trabajo</h2>
+<p class="font-body-md text-body-md text-text-primary leading-relaxed">
+            Priorizo arquitecturas limpias, código mantenible y pruebas automatizadas rigurosas. Escribo software pensando en el equipo que lo mantendrá en el futuro, documentando decisiones clave y evitando la complejidad innecesaria siempre que sea posible.
+        </p>
+</div>
+<!-- 5. Context Line -->
+<div class="max-w-2xl text-center w-full">
+<p class="font-caption text-caption text-text-muted">
+            Español nativo · Portugués nativo · Inglés B2 · CPF brasileño
+        </p>
+</div>
+<!-- 6. CTAs -->
+<div class="flex flex-wrap justify-center gap-4 max-w-2xl w-full">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-text-primary text-background font-mono-label text-mono-label uppercase tracking-widest hover:bg-white transition-colors" href="#">
+            Ver proyectos
+        </a>
+<a class="inline-flex items-center justify-center px-6 py-3 border border-border-slate text-text-primary font-mono-label text-mono-label uppercase tracking-widest hover:bg-surface-container-highest transition-colors" href="#">
+            Descargar CV
+        </a>
+<a class="inline-flex items-center justify-center px-6 py-3 border border-border-slate text-text-primary font-mono-label text-mono-label uppercase tracking-widest hover:bg-surface-container-highest transition-colors" href="#">
+            LinkedIn
+        </a>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-background border-t border-border-slate w-full mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter py-12 px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto">
+<!-- Left Side: Copyright & Brand -->
+<div class="flex flex-col gap-2">
+<span class="text-text-primary font-mono-label text-mono-label font-bold tracking-widest">ENGINEER_CORE</span>
+<span class="font-mono-code text-mono-code text-text-muted">© 2024 SYSTEM_ARCHITECT // ALL RIGHTS RESERVED</span>
+</div>
+<!-- Right Side: Links -->
+<div class="flex flex-wrap gap-x-6 gap-y-2 md:justify-end font-mono-code text-mono-code">
+<a class="text-text-muted opacity-80 hover:opacity-100 hover:text-primary hover:underline decoration-status-blue/50 transition-all" href="#">GitHub</a>
+<a class="text-text-muted opacity-80 hover:opacity-100 hover:text-primary hover:underline decoration-status-blue/50 transition-all" href="#">LinkedIn</a>
+<a class="text-text-muted opacity-80 hover:opacity-100 hover:text-primary hover:underline decoration-status-blue/50 transition-all" href="#">Email</a>
+<span class="text-text-muted opacity-80 hover:opacity-100 transition-opacity">Status: Available for high-impact roles</span>
+</div>
+</div>
+</footer>
+</body></html>
