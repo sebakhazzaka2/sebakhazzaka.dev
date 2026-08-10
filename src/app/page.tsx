@@ -5,6 +5,7 @@ import { ProjectCard } from "@/components/project-card";
 import { ProofBanner } from "@/components/proof-banner";
 import { Reveal } from "@/components/reveal";
 import { Section, SectionHeading } from "@/components/section";
+import { StackSection } from "@/components/stack-section";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 
@@ -57,6 +58,13 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+      </Section>
+
+      <Section id="stack" className="mb-section-gap">
+        <SectionHeading>CORE_STACK</SectionHeading>
+        <Reveal>
+          <StackSection />
+        </Reveal>
       </Section>
 
       <Section className="mb-section-gap">
