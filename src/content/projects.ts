@@ -13,6 +13,8 @@ export type Decision = {
   tag: string;
   title: string;
   description: string;
+  /** Alternativa que se descartó — el detalle que muestra criterio, no solo la elección. */
+  alternativeDiscarded?: string;
   /** Variante DEBT_LOGGED del diseño de Stitch: deuda técnica documentada. */
   debtLogged?: boolean;
   resolvedIn?: { label: string; href: string };
@@ -96,7 +98,8 @@ export const projects: Project[] = [
         tag: "multitenancy",
         title: "Una instancia Docker por cliente",
         description:
-          "En vez de multitenancy con una sola instancia compartida: aísla datos y una falla de un cliente no afecta a otros, a costo de más operación por cliente nuevo.",
+          "Aísla datos y una falla de un cliente no afecta a otros, a costo de más operación por cliente nuevo.",
+        alternativeDiscarded: "Multitenancy con una sola instancia compartida",
       },
       {
         icon: "alert-triangle",
@@ -109,10 +112,11 @@ export const projects: Project[] = [
       },
       {
         icon: "server",
-        tag: "PaaS gestionado",
+        tag: "VPS propio",
         title: "Deploy en Hetzner + Caddy",
         description:
           "Costo-eficiencia y control total del entorno de producción. Deploy vía git fetch + reset --hard en vez de git pull, para que un archivo tocado a mano en el server no rompa el pipeline.",
+        alternativeDiscarded: "PaaS gestionado (Render / Heroku)",
       },
     ],
     results: [
@@ -173,6 +177,8 @@ export const projects: Project[] = [
         title: "Multi-tenant ready, single-tenant en operación",
         description:
           "tenant_id en toda tabla del dominio desde el día uno, con un @TenantFilter global de Hibernate — sin construir infraestructura operativa multi-tenant (sin subdominios, sin signup, sin panel super-admin) hasta que haga falta.",
+        alternativeDiscarded:
+          "Single-tenant sin preparación, o multi-tenant operativo completo en el MVP1",
       },
       {
         icon: "alert-triangle",
@@ -180,6 +186,7 @@ export const projects: Project[] = [
         title: "Auth JWT en cookie HttpOnly desde el inicio",
         description:
           "A diferencia del consultorio, que arrancó con JWT en localStorage y lo está migrando: acá se aplicó la lección desde el primer commit.",
+        alternativeDiscarded: "JWT en localStorage (como en Consultorio)",
       },
       {
         icon: "server",
@@ -187,6 +194,7 @@ export const projects: Project[] = [
         title: "Testcontainers sobre mocks",
         description:
           "Tests de integración contra Postgres real (AbstractIntegrationTest.java + ~10 tests), no contra un mock de repositorio.",
+        alternativeDiscarded: "Mocks o H2 in-memory",
       },
     ],
     results: [
