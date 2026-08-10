@@ -3,13 +3,24 @@ import type { Metadata } from "next";
 import { site } from "@/content/site";
 
 /**
- * metadataBase: NEXT_PUBLIC_SITE_URL primero (dominio real cuando esté
- * comprado), Vercel URL como fallback en preview/deploys sin dominio propio,
- * localhost en dev. Nunca bloquea el build por falta de una variable.
+ * metadataBase, en orden:
+ * 1. NEXT_PUBLIC_SITE_URL — dominio real, cuando esté comprado y configurado.
+ * 2. VERCEL_PROJECT_PRODUCTION_URL — el alias estable de producción de Vercel
+ *    (ej. sebakhazzaka-dev.vercel.app). A diferencia de VERCEL_URL, no cambia
+ *    en cada deploy — VERCEL_URL apunta a la URL única de ESE deployment
+ *    puntual, así que usarlo acá rompería sitemap/robots/canonical/OG cada
+ *    vez que se hace un deploy nuevo.
+ * 3. El dominio hardcodeado en content/site.ts, para dev local sin ninguna
+ *    variable seteada.
+ * Nunca bloquea el build por falta de una variable.
  */
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : `https://${site.domain}`);
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : undefined) ??
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined) ??
+  `https://${site.domain}`;
 
 type BuildMetadataInput = {
   /** Sin el sufijo del sitio — se agrega acá. Mantener bajo ~60 caracteres. */
