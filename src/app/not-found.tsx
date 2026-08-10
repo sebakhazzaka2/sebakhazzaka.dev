@@ -15,7 +15,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="mt-8 inline-flex items-center gap-2 bg-status-blue px-6 py-3 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
+        className="mt-8 inline-flex items-center gap-2 bg-cta px-6 py-3 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
       >
         <ArrowLeft aria-hidden="true" className="size-4" />
         Volver al inicio

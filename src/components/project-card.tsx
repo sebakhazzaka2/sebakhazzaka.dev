@@ -47,7 +47,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <div className="mt-8 flex items-center gap-6">
           <Link
             href={`/proyectos/${project.slug}`}
-            className="inline-flex items-center gap-2 bg-status-blue px-4 py-2 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
+            className="inline-flex items-center gap-2 bg-cta px-4 py-2 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
           >
             Ver case study
             <ArrowRight aria-hidden="true" className="size-[18px]" />

@@ -35,7 +35,7 @@ export function CvCard({ cv }: { cv: CvOption }) {
         <a
           href={cv.visualHref}
           download
-          className="flex w-full items-center justify-center gap-2 bg-status-blue px-6 py-2 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90 sm:w-auto"
+          className="flex w-full items-center justify-center gap-2 bg-cta px-6 py-2 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90 sm:w-auto"
         >
           <Download aria-hidden="true" className="size-[18px]" />
           Descargar PDF

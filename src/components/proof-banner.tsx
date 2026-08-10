@@ -39,7 +39,7 @@ export function ProofBanner() {
           href={liveProject.links.live}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-status-blue px-6 py-2 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
+          className="inline-flex items-center gap-2 bg-cta px-6 py-2 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
         >
           Ver sistema
           <ExternalLink aria-hidden="true" className="size-[18px]" />

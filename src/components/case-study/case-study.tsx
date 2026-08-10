@@ -63,7 +63,7 @@ export function CaseStudy({ project }: CaseStudyProps) {
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-status-blue px-6 py-3 font-mono-label text-mono-label text-white transition-colors hover:bg-status-blue/90"
+              className="inline-flex items-center justify-center gap-2 bg-cta px-6 py-3 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
             >
               Ver sistema
               <ExternalLink aria-hidden="true" className="size-4" />

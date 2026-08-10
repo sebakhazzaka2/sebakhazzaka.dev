@@ -32,6 +32,10 @@
 
   /* Tokens literales de Stitch, para markup fiel al diseño original */
   --color-status-blue: #3b82f6;
+  /* #3B82F6 + texto blanco da ~3.78:1, no pasa WCAG AA (4.5:1) para texto normal.
+     Solo para botones sólidos con texto blanco — status-blue como texto/borde
+     sobre fondo oscuro ya pasa AA (~4.97:1) y no necesita este ajuste. */
+  --color-cta: #2563eb;
   --color-border-slate: #333333;
   --color-text-primary: #ededed;
   --color-text-secondary: #a1a1a1;

@@ -28,7 +28,7 @@ export function EvidenceCard({ evidence }: { evidence: Evidence }) {
         className="block break-words border-l-[3px] border-status-blue bg-surface-container-lowest p-3 font-mono-code text-[12px] italic text-text-muted transition-colors hover:text-text-secondary"
       >
         &quot;{evidence.quote}&quot;
-        <span className="mt-1 block not-italic text-text-muted/80">
+        <span className="mt-1 block not-italic text-text-muted">
           — {evidence.source}
         </span>
       </a>

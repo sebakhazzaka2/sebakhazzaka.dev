@@ -32,7 +32,7 @@ export default function Home() {
             <div className="mt-12 flex gap-4">
               <a
                 href="#proyectos"
-                className="bg-status-blue px-6 py-3 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
+                className="bg-cta px-6 py-3 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
               >
                 VER_PROYECTOS
               </a>
