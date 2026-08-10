@@ -21,28 +21,29 @@ export function CvCard({ cv }: { cv: CvOption }) {
               ATS / Visual
             </span>
           </div>
-          <a
-            href={cv.atsHref}
-            download
-            className="font-mono-code text-mono-code text-text-muted underline decoration-status-blue/30 transition-colors hover:text-text-secondary"
-          >
-            Versión ATS (texto plano)
-          </a>
+          <span className="font-mono-code text-mono-code text-text-muted">
+            Actualizado: {cv.updated}
+          </span>
         </div>
       </div>
 
-      <div className="flex w-full flex-col items-end gap-2 sm:w-auto">
+      <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
         <a
           href={cv.visualHref}
           download
           className="flex w-full items-center justify-center gap-2 bg-cta px-6 py-2 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90 sm:w-auto"
         >
           <Download aria-hidden="true" className="size-[18px]" />
-          Descargar PDF
+          Descargar Visual
         </a>
-        <span className="font-mono-code text-[11px] text-text-muted">
-          Actualizado: {cv.updated}
-        </span>
+        <a
+          href={cv.atsHref}
+          download
+          className="flex w-full items-center justify-center gap-2 border border-border-slate bg-surface-container-lowest px-6 py-2 font-mono-label text-mono-label text-text-primary transition-colors hover:bg-surface-container sm:w-auto"
+        >
+          <Download aria-hidden="true" className="size-[18px]" />
+          Descargar ATS
+        </a>
       </div>
     </div>
   );
