@@ -1,36 +1,73 @@
-import { MonoTag } from "@/components/mono-tag";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+
+import { ProjectCard } from "@/components/project-card";
+import { ProofBanner } from "@/components/proof-banner";
 import { Reveal } from "@/components/reveal";
 import { Section, SectionHeading } from "@/components/section";
+import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 
-/**
- * Placeholder de la landing: sólo verifica que el chrome y los primitivos de
- * layout compongan bien. Las 5 secciones reales entran en los pasos 5-7.
- */
 export default function Home() {
   return (
     <div className="mx-auto w-full max-w-[1200px] px-margin-mobile pb-section-gap md:px-margin-desktop">
-      <Section className="mt-32 md:mt-48 mb-section-gap">
+      {/* Hero — vende quién sos, el stack real y un CTA. Sin adjetivos. */}
+      <Section className="mt-32 mb-section-gap md:mt-48">
         <Reveal>
-          <p className="font-mono-label text-mono-label uppercase tracking-widest text-status-blue">
-            {site.role}
-          </p>
-          <h1 className="mt-6 max-w-3xl font-headline-lg-mobile text-headline-lg-mobile text-text-primary md:font-headline-lg md:text-headline-lg">
-            {site.name}
-          </h1>
-          <p className="mt-6 max-w-[65ch] font-body-lg text-body-lg text-text-secondary">
-            Sitio en construcción — el contenido real entra en los próximos
-            pasos.
-          </p>
+          <div className="max-w-3xl">
+            <p className="mb-6 font-mono-label text-mono-label uppercase tracking-widest text-status-blue">
+              {site.role} · {site.tagline}
+            </p>
+            <h1 className="font-headline-lg-mobile text-headline-lg-mobile text-text-primary md:font-headline-lg md:text-headline-lg">
+              {site.name}
+            </h1>
+            <p className="mt-6 max-w-[65ch] font-body-lg text-body-lg leading-relaxed text-text-secondary">
+              Java + Spring Boot en el backend, Next.js y Angular en el
+              frontend. Dos sistemas reales en producción y en desarrollo,
+              con decisiones documentadas en cada uno.
+            </p>
+            <div className="mt-12 flex gap-4">
+              <a
+                href="#proyectos"
+                className="bg-status-blue px-6 py-3 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
+              >
+                VER_PROYECTOS
+              </a>
+              <a
+                href={`mailto:${site.links.email}`}
+                className="border border-border-slate bg-[#1A1A1A] px-6 py-3 font-mono-label text-mono-label text-text-primary transition-colors hover:border-[#444444]"
+              >
+                CONTACTO
+              </a>
+            </div>
+          </div>
         </Reveal>
       </Section>
 
-      <Section id="stack">
-        <SectionHeading>STACK</SectionHeading>
-        <Reveal className="flex flex-wrap gap-2">
-          {site.tagline.split(" · ").map((tech) => (
-            <MonoTag key={tech}>{tech}</MonoTag>
+      <Reveal>
+        <ProofBanner />
+      </Reveal>
+
+      <Section id="proyectos" className="mb-section-gap">
+        <SectionHeading>SELECTED_PROJECTS</SectionHeading>
+        <div className="grid grid-cols-1 gap-gutter md:grid-cols-2">
+          {projects.map((project, index) => (
+            <Reveal key={project.slug} delay={index * 0.1}>
+              <ProjectCard project={project} />
+            </Reveal>
           ))}
+        </div>
+      </Section>
+
+      <Section className="mb-section-gap">
+        <Reveal>
+          <Link
+            href="/cv"
+            className="inline-flex items-center gap-2 font-mono-label text-mono-label text-status-blue transition-colors hover:text-text-primary"
+          >
+            Ver CV completo
+            <ArrowRight aria-hidden="true" className="size-4" />
+          </Link>
         </Reveal>
       </Section>
     </div>
