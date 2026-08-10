@@ -113,4 +113,22 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /*
+    Reduced motion se resuelve acá y no con una rama en <Reveal>: pisar el estilo
+    inline de motion por CSS evita cualquier diferencia entre server y cliente.
+  */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
 }

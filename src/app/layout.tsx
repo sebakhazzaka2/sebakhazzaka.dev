@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
+
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { site } from "@/content/site";
 import "./globals.css";
 
 const geist = Geist({
@@ -16,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sebastián Khazzaka — Full-Stack Developer",
+  title: `${site.name} — ${site.role}`,
   description:
     "Full-Stack Developer · Java + Spring Boot + Next.js. Sistemas reales en producción, decisiones documentadas.",
 };
@@ -24,10 +28,28 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="es"
+      lang={site.locale}
       className={`${geist.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        {/* Sin JS los reveals nunca animan: se muestran ya visibles en vez de quedar en opacity 0. */}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+      </head>
+      <body className="flex min-h-full flex-col">
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-100 focus:bg-status-blue focus:px-4 focus:py-2 focus:font-mono-label focus:text-mono-label focus:text-white"
+        >
+          Saltar al contenido
+        </a>
+        <SiteHeader />
+        <main id="contenido" className="flex flex-1 flex-col pt-16">
+          {children}
+        </main>
+        <SiteFooter />
+      </body>
     </html>
   );
 }
