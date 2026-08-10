@@ -4,6 +4,7 @@ import { Geist, JetBrains_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { site } from "@/content/site";
+import { buildMetadata, siteUrl } from "@/lib/metadata";
 import "./globals.css";
 
 const geist = Geist({
@@ -20,9 +21,22 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.role}`,
-  description:
-    "Full-Stack Developer · Java + Spring Boot + Next.js. Sistemas reales en producción, decisiones documentadas.",
+  metadataBase: new URL(siteUrl),
+  ...buildMetadata({
+    title: `${site.name} — ${site.role}`,
+    description:
+      "Full-Stack Developer · Java + Spring Boot + Next.js. Sistemas reales en producción, decisiones documentadas.",
+    path: "/",
+  }),
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  jobTitle: site.role,
+  url: siteUrl,
+  sameAs: [site.links.github, site.links.linkedin],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -36,6 +50,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <noscript>
           <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
         </noscript>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </head>
       <body className="flex min-h-full flex-col">
         <a
