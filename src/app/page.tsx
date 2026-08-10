@@ -1,11 +1,13 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+import { EvidenceCard } from "@/components/evidence-card";
 import { ProjectCard } from "@/components/project-card";
 import { ProofBanner } from "@/components/proof-banner";
 import { Reveal } from "@/components/reveal";
 import { Section, SectionHeading } from "@/components/section";
 import { StackSection } from "@/components/stack-section";
+import { evidence } from "@/content/evidence";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 
@@ -65,6 +67,17 @@ export default function Home() {
         <Reveal>
           <StackSection />
         </Reveal>
+      </Section>
+
+      <Section id="como-trabajo" className="mb-section-gap">
+        <SectionHeading>HOW_I_WORK</SectionHeading>
+        <div className="grid grid-cols-1 gap-px bg-border-slate md:grid-cols-2">
+          {evidence.map((item, index) => (
+            <Reveal key={item.number} delay={index * 0.08}>
+              <EvidenceCard evidence={item} />
+            </Reveal>
+          ))}
+        </div>
       </Section>
 
       <Section className="mb-section-gap">
