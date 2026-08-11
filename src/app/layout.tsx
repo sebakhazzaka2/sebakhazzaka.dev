@@ -3,6 +3,7 @@ import { Geist, JetBrains_Mono } from "next/font/google";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { WhatsappButton } from "@/components/whatsapp-button";
 import { site } from "@/content/site";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import "./globals.css";
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <SiteFooter />
+        <WhatsappButton />
       </body>
     </html>
   );
