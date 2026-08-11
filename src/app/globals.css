@@ -108,6 +108,43 @@
   --text-mono-code: 13px;
   --text-mono-code--line-height: 1.7;
   --text-mono-code--font-weight: 400;
+
+  /*
+    Escala display — agregada en la redesign visual (docs/plans/portfolio-visual-redesign.md).
+    clamp() en vez del patrón "text-X-mobile md:text-X": una sola clase, escala continua.
+  */
+  --font-display-xl: var(--font-geist);
+  --text-display-xl: clamp(2.75rem, 1.2rem + 7vw, 7rem);
+  --text-display-xl--line-height: 0.95;
+  --text-display-xl--letter-spacing: -0.04em;
+  --text-display-xl--font-weight: 700;
+
+  --font-display-lg: var(--font-geist);
+  --text-display-lg: clamp(2rem, 1rem + 4.5vw, 4rem);
+  --text-display-lg--line-height: 1;
+  --text-display-lg--letter-spacing: -0.03em;
+  --text-display-lg--font-weight: 700;
+
+  --font-display-md: var(--font-geist);
+  --text-display-md: clamp(1.5rem, 1rem + 2.2vw, 2.5rem);
+  --text-display-md--line-height: 1.08;
+  --text-display-md--letter-spacing: -0.02em;
+  --text-display-md--font-weight: 600;
+
+  --font-eyebrow: var(--font-jetbrains-mono);
+  --text-eyebrow: 12px;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.18em;
+  --text-eyebrow--font-weight: 500;
+
+  /* Curvas de movimiento compartidas por todas las primitivas de motion/ */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Elevación sutil, alternativa al borde para separar superficies del fondo */
+  --color-surface-raised: #181818;
+  --shadow-raised: 0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
+    0 8px 24px -12px rgba(0, 0, 0, 0.5);
 }
 
 @layer base {
@@ -129,7 +166,8 @@
     html {
       scroll-behavior: auto;
     }
-    [data-reveal] {
+    [data-reveal],
+    [data-motion] {
       opacity: 1 !important;
       transform: none !important;
       transition: none !important;
