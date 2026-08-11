@@ -1,6 +1,7 @@
 import { Terminal } from "lucide-react";
 import Link from "next/link";
 
+import { GithubIcon, LinkedinIcon } from "@/components/social-icons";
 import { navLinks, site } from "@/content/site";
 
 /**
@@ -37,6 +38,26 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
+          <div className="hidden items-center gap-4 md:flex">
+            <a
+              href={site.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="text-text-secondary transition-colors hover:text-text-primary"
+            >
+              <GithubIcon className="size-5" />
+            </a>
+            <a
+              href={site.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-text-secondary transition-colors hover:text-text-primary"
+            >
+              <LinkedinIcon className="size-5" />
+            </a>
+          </div>
           <a
             href={`mailto:${site.links.email}`}
             className="font-mono-label text-mono-label text-status-blue transition-colors hover:text-text-primary"
