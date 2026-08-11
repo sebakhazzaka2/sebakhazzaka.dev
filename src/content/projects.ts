@@ -23,7 +23,6 @@ export type Decision = {
 export type ResultStat = {
   label: string;
   value: string;
-  /** Para el par estimado/real de Frontpet: marca la desviación en rojo. */
   variant?: "default" | "accent" | "warn";
 };
 
@@ -122,9 +121,9 @@ export const projects: Project[] = [
       },
     ],
     results: [
-      { label: "Estado", value: "En producción", variant: "accent" },
-      { label: "Timeline", value: "Desde mayo 2026" },
+      { label: "Cliente activo desde", value: "Mayo 2026", variant: "accent" },
       { label: "Migraciones", value: "9 versionadas" },
+      { label: "Tiers comerciales", value: "3" },
     ],
     learnings:
       "Desplegar un sistema por-cliente en bare metal enseñó la importancia de la infraestructura declarativa y la automatización agresiva: cada paso manual en el onboarding de un cliente nuevo era un punto de falla potencial que terminó scripteado. La caché de assets también reveló que Spring Security agrega no-store a toda respuesta por default — moverla a la capa de proxy (Caddy) resolvió un carrusel que se trababa sin tocar el backend.",
@@ -206,9 +205,9 @@ export const projects: Project[] = [
       },
     ],
     results: [
-      { label: "Estimado (Sprint 5)", value: "19h" },
-      { label: "Real (Sprint 5)", value: "26,5h" },
-      { label: "Desvío", value: "+40%", variant: "warn" },
+      { label: "Módulos por dominio", value: "6" },
+      { label: "Tests de integración", value: "~10 (Postgres real)" },
+      { label: "Auth", value: "JWT en cookie HttpOnly", variant: "accent" },
     ],
     learnings:
       "El Sprint 5 (booking backend) corrió un 40% por encima de lo estimado, y quedó registrado en el ROADMAP con el detalle del desvío en vez de promediarlo hacia abajo. El re-baseo del plan (17/07/2026), cuando el Sprint 6 salió ~2x subestimado, se documentó con la misma lógica: separar el hito de cobro de la entrega final para que un desvío de estimación no ponga en riesgo el pago.",

@@ -56,7 +56,7 @@ export const evidence: Evidence[] = [
     number: "04",
     title: "ESTIMO_MIDO_CORRIJO",
     description:
-      "Estimo, mido y corrijo. Presupuesté 19 horas para el backend de booking. Me llevó 26,5. Está registrado en el ROADMAP con la razón del desvío, no escondido.",
+      "Estimo, mido y corrijo. El Sprint 5 (booking backend) corrió 40% sobre lo estimado. Lo registré en el ROADMAP en vez de esconderlo, y separé el hito de cobro de la entrega final para que el desvío no pusiera en riesgo el pago del cliente.",
     quote: "corrió ~26,5 hs vs 19 estimadas (+40%). Ver Registro de decisiones de plan",
     source: "Frontpet — ROADMAP.md, Sprint 5",
     permalink:
