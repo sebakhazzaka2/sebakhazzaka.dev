@@ -4,6 +4,17 @@
  * Va después de la evidencia (banner LIVE, proyectos, Cómo trabajo) a
  * propósito — leído después de ver el trabajo, no antes.
  */
+export type Certification = {
+  title: string;
+  issuer: string;
+  detail: string;
+  date: string;
+  /** PDF real del certificado, servido desde public/certificaciones. */
+  fileHref: string;
+  /** Link público de verificación del emisor, si lo ofrece (ej. NVIDIA). */
+  verifyHref?: string;
+};
+
 export const about = {
   photo: {
     src: "/sobre-mi/cv-photo-pro.png",
@@ -11,6 +22,23 @@ export const about = {
   },
   location: "Montevideo, Uruguay · Rivera / Santana do Livramento (frontera UY-BR)",
   languages: "Español nativo · Português nativo · English B2",
+  certifications: [
+    {
+      title: "First Certificate in English (FCE)",
+      issuer: "Cambridge Assessment English",
+      detail: "Grade C · Council of Europe Level B2 · Overall Score 164",
+      date: "Diciembre 2017",
+      fileHref: "/certificaciones/fce-cambridge-b2.pdf",
+    },
+    {
+      title: "Fundamentals of Deep Learning",
+      issuer: "NVIDIA",
+      detail: "Certificate of Competency",
+      date: "Agosto 2026",
+      fileHref: "/certificaciones/nvidia-fundamentals-deep-learning.pdf",
+      verifyHref: "https://learn.nvidia.com/certificates?id=zNQJH64kT52qxpg3d5N0cA",
+    },
+  ] as Certification[],
   comoEmpece:
     "Empecé a programar por curiosidad. De chico, los videojuegos y el hecho de desarmar PCs me llevaban constantemente a querer entender cómo funcionaba todo por dentro. Esa curiosidad terminó llevándome a estudiar programación. Hoy curso Lic. en Sistemas en la Universidad ORT Uruguay, semestre 4/8, mientras aplico conocimientos de mis fundamentos y mis aprendizajes autodidactas.",
   loQueMeMueve:

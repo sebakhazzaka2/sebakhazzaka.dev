@@ -55,6 +55,68 @@ export default function SobreMiPage() {
           </p>
         </section>
 
+        <section className="space-y-4">
+          <SubHeading>Certificaciones</SubHeading>
+          <ul className="space-y-4">
+            {about.certifications.map((cert) => (
+              <li
+                key={cert.title}
+                className="flex flex-col gap-4 border border-border-slate bg-surface-container-lowest p-4 sm:flex-row"
+              >
+                <div className="relative h-40 w-28 shrink-0 overflow-hidden border border-border-slate bg-white">
+                  <object
+                    data={`${cert.fileHref}#toolbar=0&navpanes=0&view=FitH`}
+                    type="application/pdf"
+                    aria-label={`Vista previa de ${cert.title}`}
+                    className="pointer-events-none size-full"
+                  />
+                  <a
+                    href={cert.fileHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Abrir certificado completo: ${cert.title}`}
+                    className="absolute inset-0"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <span className="font-body-md text-body-md text-text-primary">
+                      {cert.title}
+                    </span>
+                    <span className="font-mono-code text-mono-code text-text-muted">
+                      {cert.date}
+                    </span>
+                  </div>
+                  <p className="font-mono-code text-mono-code text-text-muted">
+                    {cert.issuer} — {cert.detail}
+                  </p>
+                  <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1">
+                    <a
+                      href={cert.fileHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono-code text-mono-code text-status-blue underline decoration-status-blue/30 transition-colors hover:text-text-primary"
+                    >
+                      Ver certificado →
+                    </a>
+                    {cert.verifyHref && (
+                      <a
+                        href={cert.verifyHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono-code text-mono-code text-status-blue underline decoration-status-blue/30 transition-colors hover:text-text-primary"
+                      >
+                        Verificar →
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <section className="space-y-4 border-l-2 border-border-slate py-2 pl-6">
           <SubHeading>Cómo trabajo con otros</SubHeading>
           <p className="max-w-[65ch] font-body-lg text-body-lg leading-relaxed text-text-secondary">
