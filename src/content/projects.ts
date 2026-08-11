@@ -55,6 +55,8 @@ export type Project = {
   results: ResultStat[];
   learnings: string;
   heroImage: ProjectImage;
+  /** Capturas adicionales, ej. panel admin — no se muestran en la card, solo en el case study. */
+  screenshots?: ProjectImage[];
   links: {
     repo: string;
     live?: string;
@@ -130,6 +132,12 @@ export const projects: Project[] = [
       src: "/projects/consultorio/landing.png",
       alt: "Landing pública de neodentalmaster.turnosuy.com en producción",
     },
+    screenshots: [
+      {
+        src: "/projects/consultorio/admin.png",
+        alt: "Panel admin del consultorio: agenda, historia clínica y tratamientos, en producción",
+      },
+    ],
     links: {
       repo: "https://github.com/sebakhazzaka2/consultorio-odontologico",
       live: "https://neodentalmaster.turnosuy.com",

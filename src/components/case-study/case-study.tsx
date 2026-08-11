@@ -95,6 +95,25 @@ export function CaseStudy({ project }: CaseStudyProps) {
             </span>
           )}
         </div>
+
+        {project.screenshots && project.screenshots.length > 0 && (
+          <div className="grid grid-cols-1 gap-gutter md:grid-cols-2">
+            {project.screenshots.map((screenshot) => (
+              <div
+                key={screenshot.src}
+                className="relative aspect-video overflow-hidden rounded-lg border border-border-slate"
+              >
+                <Image
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover object-top"
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <BeforeAfterImpact data={project.beforeAfterImpact} />
