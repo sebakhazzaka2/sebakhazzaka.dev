@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText, UserRound } from "lucide-react";
 import Link from "next/link";
 
 import { EvidenceCard } from "@/components/evidence-card";
@@ -73,6 +73,60 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Después de la evidencia, no antes: acá es donde alguien ya convencido busca saber quién sos. */}
+      <Section className="mb-section-gap">
+        <Reveal>
+          <div className="grid grid-cols-2 gap-3 md:gap-gutter">
+            <Link
+              href="/sobre-mi"
+              className="group flex items-center justify-between gap-2 border border-border-slate bg-surface-container-lowest p-4 transition-colors hover:border-status-blue/50 hover:bg-surface-container-low md:gap-4 md:p-8"
+            >
+              <div className="flex min-w-0 items-center gap-3 md:gap-4">
+                <UserRound
+                  aria-hidden="true"
+                  className="size-5 shrink-0 text-text-muted transition-colors group-hover:text-status-blue md:size-8"
+                />
+                <div className="space-y-1">
+                  <span className="hidden font-mono-label text-mono-label text-text-muted sm:block">
+                    Más allá del código
+                  </span>
+                  <h3 className="font-body-md text-body-md text-text-primary transition-colors group-hover:text-status-blue md:font-headline-md md:text-headline-md">
+                    Sobre mí
+                  </h3>
+                </div>
+              </div>
+              <ArrowRight
+                aria-hidden="true"
+                className="hidden size-6 shrink-0 text-text-muted transition-colors group-hover:text-status-blue sm:block"
+              />
+            </Link>
+            <Link
+              href="/cv"
+              className="group flex items-center justify-between gap-2 border border-border-slate bg-surface-container-lowest p-4 transition-colors hover:border-status-blue/50 hover:bg-surface-container-low md:gap-4 md:p-8"
+            >
+              <div className="flex min-w-0 items-center gap-3 md:gap-4">
+                <FileText
+                  aria-hidden="true"
+                  className="size-5 shrink-0 text-text-muted transition-colors group-hover:text-status-blue md:size-8"
+                />
+                <div className="space-y-1">
+                  <span className="hidden font-mono-label text-mono-label text-text-muted sm:block">
+                    ES · EN · PT
+                  </span>
+                  <h3 className="font-body-md text-body-md text-text-primary transition-colors group-hover:text-status-blue md:font-headline-md md:text-headline-md">
+                    CV completo
+                  </h3>
+                </div>
+              </div>
+              <ArrowRight
+                aria-hidden="true"
+                className="hidden size-6 shrink-0 text-text-muted transition-colors group-hover:text-status-blue sm:block"
+              />
+            </Link>
+          </div>
+        </Reveal>
+      </Section>
+
       <Section id="stack" className="mb-section-gap">
         <SectionHeading>CORE_STACK</SectionHeading>
         <Reveal>
@@ -80,22 +134,55 @@ export default function Home() {
         </Reveal>
       </Section>
 
+      {/* Cierre para quien llegó hasta el final del stack sin convertir arriba. */}
       <Section className="mb-section-gap">
         <Reveal>
-          <div className="flex flex-wrap gap-x-8 gap-y-4">
+          <div className="grid grid-cols-2 gap-3 md:gap-gutter">
             <Link
               href="/sobre-mi"
-              className="inline-flex items-center gap-2 font-mono-label text-mono-label text-status-blue transition-colors hover:text-text-primary"
+              className="group flex items-center justify-between gap-2 border border-border-slate bg-surface-container-lowest p-4 transition-colors hover:border-status-blue/50 hover:bg-surface-container-low md:gap-4 md:p-8"
             >
-              Conocé más sobre mí
-              <ArrowRight aria-hidden="true" className="size-4" />
+              <div className="flex min-w-0 items-center gap-3 md:gap-4">
+                <UserRound
+                  aria-hidden="true"
+                  className="size-5 shrink-0 text-text-muted transition-colors group-hover:text-status-blue md:size-8"
+                />
+                <div className="space-y-1">
+                  <span className="hidden font-mono-label text-mono-label text-text-muted sm:block">
+                    Antes de irte
+                  </span>
+                  <h3 className="font-body-md text-body-md text-text-primary transition-colors group-hover:text-status-blue md:font-headline-md md:text-headline-md">
+                    ¿Quién soy?
+                  </h3>
+                </div>
+              </div>
+              <ArrowRight
+                aria-hidden="true"
+                className="hidden size-6 shrink-0 text-text-muted transition-colors group-hover:text-status-blue sm:block"
+              />
             </Link>
             <Link
               href="/cv"
-              className="inline-flex items-center gap-2 font-mono-label text-mono-label text-status-blue transition-colors hover:text-text-primary"
+              className="group flex items-center justify-between gap-2 border border-border-slate bg-surface-container-lowest p-4 transition-colors hover:border-status-blue/50 hover:bg-surface-container-low md:gap-4 md:p-8"
             >
-              Ver CV completo
-              <ArrowRight aria-hidden="true" className="size-4" />
+              <div className="flex min-w-0 items-center gap-3 md:gap-4">
+                <FileText
+                  aria-hidden="true"
+                  className="size-5 shrink-0 text-text-muted transition-colors group-hover:text-status-blue md:size-8"
+                />
+                <div className="space-y-1">
+                  <span className="hidden font-mono-label text-mono-label text-text-muted sm:block">
+                    Antes de irte
+                  </span>
+                  <h3 className="font-body-md text-body-md text-text-primary transition-colors group-hover:text-status-blue md:font-headline-md md:text-headline-md">
+                    Llevate el CV
+                  </h3>
+                </div>
+              </div>
+              <ArrowRight
+                aria-hidden="true"
+                className="hidden size-6 shrink-0 text-text-muted transition-colors group-hover:text-status-blue sm:block"
+              />
             </Link>
           </div>
         </Reveal>
