@@ -18,6 +18,8 @@ export type Decision = {
   /** Variante DEBT_LOGGED del diseño de Stitch: deuda técnica documentada. */
   debtLogged?: boolean;
   resolvedIn?: { label: string; href: string };
+  /** Permalink al ADR real en GitHub, fijado a commit. */
+  adrHref?: string;
 };
 
 export type ResultStat = {
@@ -60,6 +62,8 @@ export type Project = {
     repo: string;
     live?: string;
     roadmap: string;
+    /** Directorio con todos los ADRs, si el proyecto los tiene. */
+    adrs?: string;
   };
 };
 
@@ -191,6 +195,8 @@ export const projects: Project[] = [
           "tenant_id en toda tabla del dominio desde el día uno, con un @TenantFilter global de Hibernate — sin construir infraestructura operativa multi-tenant (sin subdominios, sin signup, sin panel super-admin) hasta que haga falta.",
         alternativeDiscarded:
           "Single-tenant sin preparación, o multi-tenant operativo completo en el MVP1",
+        adrHref:
+          "https://github.com/sebakhazzaka2/Frontpet/blob/cfd15a2d9a48747dd96b4be4df1ecf5e05ca3af9/docs/decisions/002-multi-tenant.md",
       },
       {
         icon: "alert-triangle",
@@ -199,6 +205,8 @@ export const projects: Project[] = [
         description:
           "A diferencia del consultorio, que arrancó con JWT en localStorage y lo está migrando: acá se aplicó la lección desde el primer commit.",
         alternativeDiscarded: "JWT en localStorage (como en Consultorio)",
+        adrHref:
+          "https://github.com/sebakhazzaka2/Frontpet/blob/cfd15a2d9a48747dd96b4be4df1ecf5e05ca3af9/docs/decisions/004-auth-jwt-cookie.md",
       },
       {
         icon: "server",
@@ -224,6 +232,7 @@ export const projects: Project[] = [
     links: {
       repo: "https://github.com/sebakhazzaka2/Frontpet",
       roadmap: "https://github.com/sebakhazzaka2/Frontpet/blob/main/ROADMAP.md",
+      adrs: "https://github.com/sebakhazzaka2/Frontpet/tree/main/docs/decisions",
     },
   },
 ];

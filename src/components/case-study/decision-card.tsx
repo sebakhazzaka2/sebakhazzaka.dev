@@ -64,6 +64,18 @@ export function DecisionCard({ decision }: { decision: Decision }) {
           <ArrowRight aria-hidden="true" className="size-4" />
         </Link>
       )}
+
+      {decision.adrHref && (
+        <a
+          href={decision.adrHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 font-mono-label text-mono-label text-status-blue transition-colors hover:text-white"
+        >
+          Ver ADR
+          <ArrowRight aria-hidden="true" className="size-4" />
+        </a>
+      )}
     </div>
   );
 }

@@ -144,6 +144,17 @@ export function CaseStudy({ project }: CaseStudyProps) {
             <DecisionCard key={decision.title} decision={decision} />
           ))}
         </div>
+        {project.links.adrs && (
+          <a
+            href={project.links.adrs}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-mono-label text-mono-label text-status-blue transition-colors hover:text-text-primary"
+          >
+            Ver todos los ADRs
+            <ArrowRight aria-hidden="true" className="size-4" />
+          </a>
+        )}
       </section>
 
       {/* Results */}
