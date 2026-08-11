@@ -62,13 +62,6 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="stack" className="mb-section-gap">
-        <SectionHeading>CORE_STACK</SectionHeading>
-        <Reveal>
-          <StackSection />
-        </Reveal>
-      </Section>
-
       <Section id="como-trabajo" className="mb-section-gap">
         <SectionHeading>HOW_I_WORK</SectionHeading>
         <div className="grid grid-cols-1 gap-px bg-border-slate md:grid-cols-2">
@@ -78,6 +71,13 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+      </Section>
+
+      <Section id="stack" className="mb-section-gap">
+        <SectionHeading>CORE_STACK</SectionHeading>
+        <Reveal>
+          <StackSection />
+        </Reveal>
       </Section>
 
       <Section className="mb-section-gap">
