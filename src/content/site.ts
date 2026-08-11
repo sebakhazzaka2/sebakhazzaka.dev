@@ -23,5 +23,6 @@ export const navLinks = [
   { href: "/#proyectos", label: "Proyectos" },
   { href: "/#como-trabajo", label: "Cómo trabajo" },
   { href: "/#stack", label: "Stack" },
+  { href: "/sobre-mi", label: "Sobre mí" },
   { href: "/cv", label: "CV" },
 ] as const;

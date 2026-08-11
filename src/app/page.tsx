@@ -82,13 +82,22 @@ export default function Home() {
 
       <Section className="mb-section-gap">
         <Reveal>
-          <Link
-            href="/cv"
-            className="inline-flex items-center gap-2 font-mono-label text-mono-label text-status-blue transition-colors hover:text-text-primary"
-          >
-            Ver CV completo
-            <ArrowRight aria-hidden="true" className="size-4" />
-          </Link>
+          <div className="flex flex-wrap gap-x-8 gap-y-4">
+            <Link
+              href="/sobre-mi"
+              className="inline-flex items-center gap-2 font-mono-label text-mono-label text-status-blue transition-colors hover:text-text-primary"
+            >
+              Conocé más sobre mí
+              <ArrowRight aria-hidden="true" className="size-4" />
+            </Link>
+            <Link
+              href="/cv"
+              className="inline-flex items-center gap-2 font-mono-label text-mono-label text-status-blue transition-colors hover:text-text-primary"
+            >
+              Ver CV completo
+              <ArrowRight aria-hidden="true" className="size-4" />
+            </Link>
+          </div>
         </Reveal>
       </Section>
     </div>
