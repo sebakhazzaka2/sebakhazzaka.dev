@@ -1,16 +1,16 @@
 import { Terminal } from "lucide-react";
 import Link from "next/link";
 
+import { MobileNav } from "@/components/layout/mobile-nav";
 import { GithubIcon, LinkedinIcon } from "@/components/social-icons";
 import { navLinks, site } from "@/content/site";
 
 /**
- * Header fijo del sitio.
- *
- * Sin menú hamburguesa a propósito: para una landing de secciones ancladas,
- * mostrar los links desde `md:` y dejar sólo el CTA de contacto en mobile
- * resuelve el ancho de 320px sin estado, sin trampa de foco y sin JS — así el
- * header sigue siendo un Server Component.
+ * Header fijo del sitio. El grueso sigue siendo Server Component; el único
+ * trozo interactivo (el menú mobile) vive en <MobileNav />, un Client
+ * Component aparte, para no convertir todo el header en cliente por un
+ * botón. Antes no había forma de llegar a /sobre-mi, /cv o a las secciones
+ * ancladas desde mobile salvo "Contacto" — ver MobileNav.
  */
 export function SiteHeader() {
   return (
@@ -64,6 +64,7 @@ export function SiteHeader() {
           >
             Contacto
           </a>
+          <MobileNav />
         </nav>
       </div>
     </header>
