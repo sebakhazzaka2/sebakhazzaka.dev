@@ -11,55 +11,26 @@ export type StackCategory = {
 export const stackCategories: StackCategory[] = [
   {
     title: "Backend",
-    items: [
-      "Java 17 / 21",
-      "Spring Boot 3",
-      "Spring Security",
-      "JWT (cookies HttpOnly)",
-      "JPA / Hibernate",
-      "Flyway",
-      "Maven",
-    ],
+    items: ["Java 17 / 21", "Spring Boot 3", "Spring Security", "JPA / Hibernate", "Flyway"],
   },
   {
     title: "Frontend",
-    items: [
-      "Next.js 16",
-      "React 19",
-      "Angular 19",
-      "TypeScript",
-      "Tailwind CSS 4",
-      "shadcn/ui",
-      "TanStack Query",
-    ],
+    items: ["Next.js 16", "React 19", "Angular 19", "Tailwind CSS 4"],
   },
   {
     title: "Testing y calidad",
-    items: ["JUnit 5", "Testcontainers", "ESLint", "Prettier", "WCAG / WAVE"],
+    items: ["JUnit 5", "Testcontainers"],
   },
   {
     title: "DevOps e infraestructura",
-    items: [
-      "Docker",
-      "GitHub Actions",
-      "Caddy",
-      "Coolify",
-      "Hetzner",
-      "Cloudflare",
-    ],
+    items: ["Docker", "GitHub Actions", "Hetzner"],
   },
   {
     title: "Datos",
-    items: ["PostgreSQL 16", "MySQL 8", "Diseño de esquemas (3FN)", "UUID v7"],
+    items: ["PostgreSQL 16", "UUID v7"],
   },
   {
     title: "Proceso",
-    items: [
-      "ADRs (Architecture Decision Records)",
-      "PR-based delivery",
-      "Conventional Commits",
-      "Squash merge",
-      "Roadmaps con presupuesto de horas",
-    ],
+    items: ["ADRs (Architecture Decision Records)"],
   },
 ];
