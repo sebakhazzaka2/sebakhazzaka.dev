@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -44,7 +44,7 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <div className="mt-8 flex items-center gap-6">
+        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
           <Link
             href={`/proyectos/${project.slug}`}
             className="inline-flex items-center gap-2 bg-cta px-4 py-2 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
@@ -52,6 +52,16 @@ export function ProjectCard({ project }: { project: Project }) {
             Ver case study
             <ArrowRight aria-hidden="true" className="size-[18px]" />
           </Link>
+          {project.links.demo && (
+            <a
+              href={project.links.demo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono-code text-mono-code text-status-blue underline decoration-status-blue/30 transition-colors hover:text-text-primary"
+            >
+              Probar demo →
+            </a>
+          )}
           <a
             href={project.links.repo}
             target="_blank"
@@ -61,6 +71,12 @@ export function ProjectCard({ project }: { project: Project }) {
             Ver en GitHub →
           </a>
         </div>
+        {project.links.demo && (
+          <p className="mt-3 flex items-start gap-1.5 font-mono-code text-[11px] leading-snug text-text-muted">
+            <Info aria-hidden="true" className="mt-0.5 size-3.5 shrink-0" />
+            {project.links.demo.note.es}
+          </p>
+        )}
       </div>
     </div>
   );

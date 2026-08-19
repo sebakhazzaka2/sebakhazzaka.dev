@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Code, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight, Code, ExternalLink, Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -57,7 +57,7 @@ export function CaseStudy({ project }: CaseStudyProps) {
           ))}
         </div>
 
-        <div className="flex flex-col gap-4 pt-4 sm:flex-row">
+        <div className="flex flex-col gap-4 pt-4 sm:flex-row sm:flex-wrap">
           {project.links.live && (
             <a
               href={project.links.live}
@@ -66,6 +66,17 @@ export function CaseStudy({ project }: CaseStudyProps) {
               className="inline-flex items-center justify-center gap-2 bg-cta px-6 py-3 font-mono-label text-mono-label text-white transition-opacity hover:opacity-90"
             >
               Ver sistema
+              <ExternalLink aria-hidden="true" className="size-4" />
+            </a>
+          )}
+          {project.links.demo && (
+            <a
+              href={project.links.demo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 border border-status-blue/50 bg-surface-container-lowest px-6 py-3 font-mono-label text-mono-label text-status-blue transition-colors hover:border-status-blue hover:bg-surface-container"
+            >
+              Probar demo
               <ExternalLink aria-hidden="true" className="size-4" />
             </a>
           )}
@@ -79,6 +90,16 @@ export function CaseStudy({ project }: CaseStudyProps) {
             <Code aria-hidden="true" className="size-4" />
           </a>
         </div>
+
+        {project.links.demo && (
+          <div className="flex items-start gap-2 border-l-2 border-status-blue/40 bg-surface-container-lowest px-4 py-3">
+            <Info aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-status-blue" />
+            <div className="space-y-1 font-mono-code text-[12px] leading-snug text-text-muted">
+              <p>{project.links.demo.note.es}</p>
+              <p className="text-text-muted/70">{project.links.demo.note.en}</p>
+            </div>
+          </div>
+        )}
 
         <div className="relative mt-12 aspect-video overflow-hidden rounded-lg border border-border-slate">
           <Image

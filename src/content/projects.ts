@@ -64,6 +64,16 @@ export type Project = {
     roadmap: string;
     /** Directorio con todos los ADRs, si el proyecto los tiene. */
     adrs?: string;
+    /**
+     * Instancia demo separada del cliente real, con datos de prueba y login
+     * de un solo click (sin credenciales que mostrar). Sólo Consultorio la
+     * tiene: es el tenant seguro para que un recruiter entre al admin sin
+     * tocar los datos del cliente que paga en `live`.
+     */
+    demo?: {
+      url: string;
+      note: { es: string; en: string };
+    };
   };
 };
 
@@ -148,6 +158,13 @@ export const projects: Project[] = [
       live: "https://neodentalmaster.turnosuy.com",
       roadmap:
         "https://github.com/sebakhazzaka2/consultorio-odontologico/blob/main/ROADMAP.md",
+      demo: {
+        url: "https://consultorio-odontologico-demo-frontend.onrender.com",
+        note: {
+          es: "Instancia demo con datos de prueba y login precargado — solo hay que apretar \"Entrar\". Corre en el plan gratuito de Render: si estaba dormida, la primera carga puede tardar ~50s.",
+          en: "Demo instance with test data and a prefilled login — just click \"Enter\". Runs on Render's free tier: if it was asleep, first load can take ~50s.",
+        },
+      },
     },
   },
   {
