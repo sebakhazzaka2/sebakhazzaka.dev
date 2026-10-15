@@ -35,7 +35,7 @@ export const evidence: Evidence[] = [
       "Ninguna migración aplicada a mano en producción. Flyway versionado desde el día uno en los dos proyectos, cada cambio de esquema con su propio commit.",
     quote:
       "V1__baseline_schema.sql → V9__add_google_event_id_to_citas.sql — 9 migraciones versionadas, ninguna aplicada directo sobre la base de producción.",
-    source: "Consultorio Odontológico — backend/src/main/resources/db/migration",
+    source: "TurnosUy — backend/src/main/resources/db/migration",
     permalink:
       "https://github.com/sebakhazzaka2/consultorio-odontologico/tree/9151cc85dd7992974feed53979e9e81b76b648b9/backend/src/main/resources/db/migration",
   },

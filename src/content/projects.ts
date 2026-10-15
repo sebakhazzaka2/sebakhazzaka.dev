@@ -82,7 +82,7 @@ export const projects: Project[] = [
     slug: "consultorio",
     status: "live",
     statusLabel: "Live",
-    title: "Consultorio Odontológico",
+    title: "TurnosUy",
     tagline: "B2B SaaS de gestión para profesionales de salud independientes",
     oneLiner:
       "Sistema de turnos y gestión clínica para consultorios que hoy trabajan a mano por WhatsApp y Excel.",
@@ -169,14 +169,14 @@ export const projects: Project[] = [
   },
   {
     slug: "frontpet",
-    status: "development",
-    statusLabel: "En desarrollo",
+    status: "live",
+    statusLabel: "Live",
     title: "Frontpet",
     tagline:
       "Plataforma comercial para un petshop local, con base lista para escalar a SaaS multi-tenant",
     oneLiner:
       "Catálogo con pedidos por WhatsApp y agenda de baño/tosa para un petshop, construido con arquitectura lista para atender más negocios del rubro.",
-    metaLine: "24 ADRs · +30 PRs · Hito de cobro: 05/09/2026",
+    metaLine: "24 ADRs · +30 PRs · En producción en frontpet.com.br",
     stack: [
       "Java 21",
       "Spring Boot 3",
@@ -195,9 +195,8 @@ export const projects: Project[] = [
     beforeAfterImpact: {
       before: "Propuesta comercial del negocio sin ningún sistema — pedidos y turnos informales.",
       after:
-        "SaaS en desarrollo activo, modelo de datos multi-tenant-ready operado hoy en single-tenant.",
-      impact:
-        "Hito de cobro firmado contra valor entregado real (tienda vendiendo online), para el 05/09/2026.",
+        "Catálogo online, pedidos por WhatsApp y agenda de baño/tosa en producción, sobre un modelo de datos multi-tenant-ready operado hoy en single-tenant.",
+      impact: "En producción en frontpet.com.br, operando para un petshop real.",
     },
     problem:
       "Un petshop necesita vender catálogo online, recibir pedidos por WhatsApp y ofrecer turnos de baño/tosa, sin tener ningún sistema propio.",
@@ -221,7 +220,7 @@ export const projects: Project[] = [
         title: "Auth JWT en cookie HttpOnly desde el inicio",
         description:
           "A diferencia del consultorio, que arrancó con JWT en localStorage y lo está migrando: acá se aplicó la lección desde el primer commit.",
-        alternativeDiscarded: "JWT en localStorage (como en Consultorio)",
+        alternativeDiscarded: "JWT en localStorage (como en TurnosUy)",
         adrHref:
           "https://github.com/sebakhazzaka2/Frontpet/blob/cfd15a2d9a48747dd96b4be4df1ecf5e05ca3af9/docs/decisions/004-auth-jwt-cookie.md",
       },
@@ -242,15 +241,40 @@ export const projects: Project[] = [
     learnings:
       "El Sprint 5 (booking backend) corrió un 40% por encima de lo estimado, y quedó registrado en el ROADMAP con el detalle del desvío en vez de promediarlo hacia abajo. El re-baseo del plan (17/07/2026), cuando el Sprint 6 salió ~2x subestimado, se documentó con la misma lógica: separar el hito de cobro de la entrega final para que un desvío de estimación no ponga en riesgo el pago.",
     heroImage: {
-      src: "/projects/frontpet/design-preview.png",
-      alt: "Vista previa de diseño del case study de Frontpet — no es una captura de producción",
-      isPlaceholder: true,
+      src: "/projects/frontpet/landing.png",
+      alt: "Landing pública de frontpet.com.br en producción",
     },
     links: {
       repo: "https://github.com/sebakhazzaka2/Frontpet",
+      live: "https://frontpet.com.br",
       roadmap: "https://github.com/sebakhazzaka2/Frontpet/blob/main/ROADMAP.md",
       adrs: "https://github.com/sebakhazzaka2/Frontpet/tree/main/docs/decisions",
     },
+  },
+];
+
+/**
+ * Trabajos más chicos que no justifican un case study completo: se muestran
+ * como cards livianas en la landing, separadas de los proyectos principales.
+ */
+export type OtherProject = {
+  title: string;
+  kind: string;
+  description: string;
+  stack: string[];
+  href: string;
+  hrefLabel: string;
+};
+
+export const otherProjects: OtherProject[] = [
+  {
+    title: "CUARQ — Club Uruguayo de Arquería",
+    kind: "Sitio institucional · Freelance",
+    description:
+      "Implementación y publicación del sitio nuevo del club a partir de un diseño en Figma: Inicio, Club, Escuela y Contacto, con navegación, responsive y formulario de contacto, reemplazando al sitio anterior en el dominio real.",
+    stack: ["Figma", "HTML", "CSS", "Responsive"],
+    href: "https://cuarq.org",
+    hrefLabel: "Ver sitio",
   },
 ];
 

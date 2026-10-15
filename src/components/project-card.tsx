@@ -1,4 +1,4 @@
-import { ArrowRight, Info } from "lucide-react";
+import { ArrowRight, ExternalLink, Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -52,6 +52,17 @@ export function ProjectCard({ project }: { project: Project }) {
             Ver case study
             <ArrowRight aria-hidden="true" className="size-[18px]" />
           </Link>
+          {project.links.live && (
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 font-mono-code text-mono-code text-status-blue underline decoration-status-blue/30 transition-colors hover:text-text-primary"
+            >
+              Ver sistema
+              <ExternalLink aria-hidden="true" className="size-3.5" />
+            </a>
+          )}
           {project.links.demo && (
             <a
               href={project.links.demo.url}

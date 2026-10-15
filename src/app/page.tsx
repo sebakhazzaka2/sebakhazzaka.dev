@@ -1,14 +1,16 @@
 import { ArrowRight, FileText, UserRound } from "lucide-react";
 import Link from "next/link";
 
+import { BuildingNow } from "@/components/building-now";
 import { EvidenceCard } from "@/components/evidence-card";
+import { OtherProjectCard } from "@/components/other-project-card";
 import { ProjectCard } from "@/components/project-card";
 import { ProofBanner } from "@/components/proof-banner";
 import { Reveal } from "@/components/reveal";
 import { Section, SectionHeading } from "@/components/section";
 import { StackSection } from "@/components/stack-section";
 import { evidence } from "@/content/evidence";
-import { projects } from "@/content/projects";
+import { otherProjects, projects } from "@/content/projects";
 import { site } from "@/content/site";
 
 export default function Home() {
@@ -26,8 +28,9 @@ export default function Home() {
             </h1>
             <p className="mt-6 max-w-[65ch] font-body-lg text-body-lg leading-relaxed text-text-secondary">
               Java + Spring Boot en el backend, Next.js y Angular en el
-              frontend. Dos sistemas reales en producción y en desarrollo,
-              con decisiones documentadas en cada uno.
+              frontend. Dos sistemas reales en producción, con decisiones
+              documentadas en cada uno, y un siguiente paso en construcción:
+              agentes de IA sobre ambos.
             </p>
             <div className="mt-12 flex gap-4">
               <a
@@ -57,6 +60,24 @@ export default function Home() {
           {projects.map((project, index) => (
             <Reveal key={project.slug} delay={index * 0.1}>
               <ProjectCard project={project} />
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      <Section id="building" className="mb-section-gap">
+        <SectionHeading>BUILDING_RIGHT_NOW</SectionHeading>
+        <Reveal>
+          <BuildingNow />
+        </Reveal>
+      </Section>
+
+      <Section id="otros-proyectos" className="mb-section-gap">
+        <SectionHeading>OTHER_WORK</SectionHeading>
+        <div className="grid grid-cols-1 gap-gutter md:grid-cols-2">
+          {otherProjects.map((project) => (
+            <Reveal key={project.href}>
+              <OtherProjectCard project={project} />
             </Reveal>
           ))}
         </div>
